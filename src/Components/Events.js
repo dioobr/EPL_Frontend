@@ -21,6 +21,18 @@ function Event(props) {
 	)
 }
 
+function Error(props){
+	let i = props.info;
+	return (
+		<div className="Error">
+			<div className="inner">
+				<div className="tie">Error <span>{i.code}</span></div>
+				<div className="msg">{i.message}</div>
+			</div>
+		</div>
+	)
+}
+
 function Loading(){
 	return (
 		<div className="loading">
@@ -40,14 +52,18 @@ class Events extends React.Component {
 			loaded: false,
 			items: []
 		};
-	}	
+	}
 	
 	componentDidMount() {
 		fetch("https://backend-api.raketech.com.local/events/past")
 			.then(res => res.json())
 			.then(
 				(result) => {
-					this.setState({loaded: true, items: result.data});
+					this.setState({
+						loaded: true,
+						error: (result.response.code != "Y001" ? result.response : false),
+						items: result.data
+					});
 				},			
 				(error) => {
 					this.setState({loaded: true, error});
@@ -58,9 +74,9 @@ class Events extends React.Component {
 	render(){
 		const { error, loaded, items } = this.state;
 
-		if(error) {
-			return <div>Error: {error.message}</div>;
-		} else if (!loaded) {
+		if(error){
+			return <Error info={error} /> 
+		} else if(!loaded){
 			return <Loading />;
 		} else {
 			return (

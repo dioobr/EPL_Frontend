@@ -40,6 +40,36 @@
 
 /*******************************************************/
 
+.Error{
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.Error .inner{
+    background: rgba(0, 0, 0, 0.09);
+    border-radius: 4px;
+    padding: 10px; 
+    text-align: left;     
+}
+
+.Error .tie{
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 3px;
+    padding: 5px;
+}
+
+.Error .tie span{
+    color: #b03;
+    font-weight: 400;
+}
+
+.Error .msg{
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 10px 5px;
+}
+
 .events{
     max-width: 800px;
     margin: 0 auto;
