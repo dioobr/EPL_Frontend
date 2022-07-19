@@ -1,38 +1,124 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Menu {
+    height: 45px;
+    line-height: 45px;
+    background: #35393f;
+    border-bottom: 3px solid #527e05;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.Menu ul li {
+    display: inline-block;
 }
 
-.App-link {
-  color: #61dafb;
+.Menu ul li a {
+    display: block;
+    padding: 0 20px;
+    text-decoration: none;  
+    color: #ffffff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Menu ul li a:hover {
+    background: rgba(0, 0, 0, 0.4); 
+}
+
+.Menu ul li a.active{
+    background: #527e05;
+}
+
+.Content{
+    padding: 20px 0;
+}
+
+/*******************************************************/
+
+.events{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;    
+}
+
+.events h1{
+    margin: 0 0 10px 0;
+    padding: 0;
+    text-align: left;   
+    font-size: 18px;
+}
+
+.listEvents{}
+
+.listEvents .item{
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    margin-bottom: 10px;
+    padding: 20px;
+}
+
+.listEvents .item:hover{
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.listEvents .item .date{
+    width: 100%;
+    padding-bottom: 15px;
+}
+
+.listEvents .item .place{
+    padding-top: 15px;
+}
+
+.listEvents .item .sctm{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid rgba(1, 1, 1, 0.1);
+    border-left: none;
+    border-right: none;
+    padding: 20px 0;
+}
+
+.listEvents .item .sctm div{
+    line-height: 50px;
+    vertical-align:middle;
+}
+
+.listEvents .item .sctm .score{
+    font-size: 30px;
+    font-weight: 700;
+    width: 120px;
+    min-width: 110px;
+}
+
+.listEvents .item .sctm .team{
+    width: 260px;
+    background-repeat: no-repeat;
+    background-position: right;
+    text-align: right;
+    padding: 0 60px 0 0;
+    font-size: 18px;
+    font-weight: 700;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;    
+}
+
+.listEvents .item .sctm .team.away{
+    background-position: left;
+    padding: 0 0 0 60px;
+    text-align: left;
+}
+
+@media only screen and (max-width: 480px) {
+    .listEvents .item .sctm .team span{
+        display: none;
+    }	
 }
