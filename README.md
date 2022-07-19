@@ -45,7 +45,7 @@ If everything was executed without errors, you will be able to access the fronte
 
 ### Running in Production
 
-To prepare the frontend application for a production environment, start with the following command on you shell:
+To prepare the frontend application for a production environment, start with the following command on your shell:
 
 ```shell
 REACT_APP_BACKEND_URL=https://api.epl.dioobr.com/ npm run build
