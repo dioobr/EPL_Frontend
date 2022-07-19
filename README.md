@@ -5,8 +5,8 @@ This frontend project was developed by [Diogo Braga](mailto:the@dioobr.com "Diog
 
 ### Online Demo
 
-If you just want to see it working, you can check on the address https://epl.dioobr.com.
-The backend is available on the address https://api.epl.dioobr.com.
+If you just want to see it working, you can check in the address https://epl.dioobr.com.
+The backend is available in the address https://api.epl.dioobr.com.
 
 ### Requirements
 
@@ -36,7 +36,7 @@ By default, it will start in the port 3000, but you can change it with the comma
 PORT=3001 npm start
 ```
 
-The default backend URL is defined on the file **/src/Env.js**, but you can change it with an environment variable when starting the application:
+The default backend URL is defined in the file **/src/Env.js**, but you can change it with an environment variable when starting the application:
 
 ```shell
 REACT_APP_BACKEND_URL=https://api.epl.dioobr.com/ npm start
@@ -50,7 +50,7 @@ To prepare the frontend application for a production environment, start with the
 ```shell
 REACT_APP_BACKEND_URL=https://api.epl.dioobr.com/ npm run build
 ```
-Important: For production, you need to set the backend URL on the build command. You can't change it when starting a application that is already builded.
+Important: For production, you need to set the backend URL on the build command. You can't change it when starting an application that is already builded.
 
 If it is not installed yet, install the NPM package "serve", that will run our builded application:
 
