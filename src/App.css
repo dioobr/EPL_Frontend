@@ -38,6 +38,36 @@
     padding: 20px 0;
 }
 
+.Home{
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    margin-top: -80px;
+}
+
+.Home .got{}
+
+.Home .got a{
+    display: inline-block;
+    background: #0082c7;
+    padding: 0 20px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.Home .got a:hover{
+    background: #02669b;
+}
+
+.Home .author{
+    margin-top: 40px;
+    font-size: 13px;
+}
+
 /*******************************************************/
 
 .Error{

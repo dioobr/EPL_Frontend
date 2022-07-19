@@ -1,5 +1,10 @@
 {
   "name": "Raketech Test Frontend",
+  "author": {
+    "name" : "Diogo Braga",
+    "email" : "the@dioobr.com",
+    "url" : "https://www.dioobr.com/"
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -61,7 +61,7 @@ class Events extends React.Component {
 				(result) => {
 					this.setState({
 						loaded: true,
-						error: (result.response.code != "Y001" ? result.response : false),
+						error: (result.response.code !== "Y001" ? result.response : false),
 						items: result.data
 					});
 				},			
