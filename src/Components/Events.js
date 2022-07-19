@@ -21,6 +21,17 @@ function Event(props) {
 	)
 }
 
+function Loading(){
+	return (
+		<div className="loading">
+			<div className="lds-ring">
+				<div></div><div></div><div></div><div></div>
+			</div>
+			<div className="txt">loading information...</div>
+		</div>
+	)
+}
+
 class Events extends React.Component {
 	constructor(props) {
 		super(props);
@@ -46,11 +57,11 @@ class Events extends React.Component {
 	
 	render(){
 		const { error, loaded, items } = this.state;
-		
-		if (error) {
+
+		if(error) {
 			return <div>Error: {error.message}</div>;
 		} else if (!loaded) {
-			return <div>Loading...</div>;
+			return <Loading />;
 		} else {
 			return (
 				<div className="events">
