@@ -1,5 +1,8 @@
 import React from 'react';
 import Moment from 'moment';
+import Env from '../Env';
+
+const BACKEND_URL = Env.BACKEND_URL;
 
 function Event(props) {
 	let ev = props.ev,
@@ -8,11 +11,11 @@ function Event(props) {
 		<div className="item">
 			<div className="date">{dt}</div>
 			<div className="sctm">
-				<div className="team home" style={{backgroundImage: 'url(https://backend-api.raketech.com.local/teams/badge/tiny/'+ev.idHomeTeam+'.png)'}}>
+				<div className="team home" style={{backgroundImage: 'url('+BACKEND_URL+'teams/badge/tiny/'+ev.idHomeTeam+'.png)'}}>
 					<span>{ev.strHomeTeam}</span>
 				</div>
 				<div className="score">{ev.intHomeScore} - {ev.intAwayScore}</div>
-				<div className="team away" style={{backgroundImage: 'url(https://backend-api.raketech.com.local/teams/badge/tiny/'+ev.idAwayTeam+'.png)'}}>
+				<div className="team away" style={{backgroundImage: 'url('+BACKEND_URL+'teams/badge/tiny/'+ev.idAwayTeam+'.png)'}}>
 					<span>{ev.strAwayTeam}</span>
 				</div>
 			</div>
@@ -55,7 +58,7 @@ class Events extends React.Component {
 	}
 	
 	componentDidMount() {
-		fetch("https://backend-api.raketech.com.local/events/past")
+		fetch(BACKEND_URL+'events/past')
 			.then(res => res.json())
 			.then(
 				(result) => {
