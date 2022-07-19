@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# EPL FRONTEND
+##### EPL (England Premier League)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This frontend project was developed by [Diogo Braga](mailto:the@dioobr.com "Diogo Braga") for test purposes.
 
-## Available Scripts
+### Online Demo
 
-In the project directory, you can run:
+If you just want to see it working, you can check on the address https://epl.dioobr.com.
+The backend is available on the address https://api.epl.dioobr.com.
 
-### `npm start`
+### Requirements
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This project was written with React and run with Node.js 16.16, NPM 8.11 and Serve 14.0.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Installation
 
-### `npm test`
+Clone or copy the code in a directory and execute the following command on your shell:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```shell
+npm install
+```
 
-### `npm run build`
+After all the dependences of the project are installed without errors, you will be able to start the frontend server.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Run
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To start and run the frontend application in a browser, use the following command:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```shell
+npm start
+```
 
-### `npm run eject`
+By default, it will start in the port 3000, but you can change it with the command:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```shell
+PORT=3001 npm start
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The default backend URL is defined on the file **/src/Env.js**, but you can change it with an environment variable when starting the application:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```shell
+REACT_APP_BACKEND_URL=https://api.epl.dioobr.com/ npm start
+```
+If everything was executed without errors, you will be able to access the frontend in your web browser over the address http://localhost:3001 (consider the port you are working on).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Running in Production
 
-## Learn More
+To prepare the frontend application for a production environment, start with the following command on you shell:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```shell
+REACT_APP_BACKEND_URL=https://api.epl.dioobr.com/ npm run build
+```
+Important: For production, you need to set the backend URL on the build command. You can't change it when starting a application that is already builded.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+If it is not installed yet, install the NPM package "serve", that will run our builded application:
 
-### Code Splitting
+```shell
+npm install -g serve
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+And then, let's finally execute the frontend application build to run in production:
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```shell
+PORT=3001 serve -s build
+```
+If everything was executed without errors, you will be able to access the frontend in your web browser over the address http://localhost:3001 (consider the port you are working on).

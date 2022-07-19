@@ -6,7 +6,7 @@ const BACKEND_URL = Env.BACKEND_URL;
 
 function Event(props) {
 	let ev = props.ev,
-		dt = Moment(ev.dateEvent).format('LL');
+		dt = Moment(ev.dateEvent).format('LL'); //set date format as July DD, YYYY
 	return (
 		<div className="item">
 			<div className="date">{dt}</div>
@@ -57,6 +57,7 @@ class Events extends React.Component {
 		};
 	}
 	
+	//when mounted the component, automatically request the backend and fill state.items with the latest results
 	componentDidMount() {
 		fetch(BACKEND_URL+'events/past')
 			.then(res => res.json())
@@ -64,7 +65,7 @@ class Events extends React.Component {
 				(result) => {
 					this.setState({
 						loaded: true,
-						error: (result.response.code !== "Y001" ? result.response : false),
+						error: (result.response.code !== "Y001" ? result.response : false), //the default API code for success is Y001, if not, something is wrong.
 						items: result.data
 					});
 				},			
